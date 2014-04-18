@@ -1,8 +1,25 @@
 import random
  
 vowels = ["a", "e", "i", "o", "u"]
-consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 
-              'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
+consonants = [
+                'b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 
+                'l', 'm', 'n', 'p', 'q', 'r', 's', 't', 'v', 
+                'w', 'x', 'y', 'z',
+                'ab', 'abs', 'ac', 'acr', 'ad', 'ag', 
+                'al', 'aer', 'am', 'amb', 'an', 'ann', 
+                'ant', 'ap', 'ar', 'arct', 'astr', 'aur', 
+                'avi', 'axi', 'ben', 'bi', 'bib', 'bon',
+                'bov', 'cac', 'cal', 'can', 'capr', 'cast',
+                'cen', 'cir', 'cl', 'con', 'com', 'cord',
+                'cosm', 'cr', 'cred', 'cub', 'cut', 'cyn',
+                'de', 'deb', 'den', 'dex', 'dia', 'dipl',
+                'doc', 'dub', 'ec', 'eg', 'ed', 'es', 'eso',
+                'fab', 'fic', 'fl', 'for', 'gl', 'gyn', 'hyp',
+                'id', 'in', 'im', 'int', 'intr', 'is', 'jac',
+                'kl', 'lab', 'lax', 'lat', 'lev', 'lin', 'mal',
+                'mic', 'mon', 'nar', 'nov', 'oct', 'ob', 'os',
+                'ol', 'op', 'or', 'os', 'ov', 'ot', 'ph'
+            ]
 
 
 def _assign_weight(arr):
