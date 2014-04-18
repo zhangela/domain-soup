@@ -5,19 +5,22 @@ consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q',
               'r', 's', 't', 'v', 'w', 'x', 'y', 'z']
 
 
-weighted_vowels = []
-
-def _assignment_weight(arr):
+def _assign_weight(arr):
     weighted = []
+    length = len(arr)
     for index, letter in enumerate(arr):
-         weighted.append((5 - index, letter))
-    return weighted
+         weighted.append((letter, length - index))
+    population = [val for val, cnt in weighted for i in range(cnt)]
+    return population
+
+weighted_vowels = _assign_weight(vowels)
+weighted_consonants = _assign_weight(consonants)
 
 def _vowel():
-    return random.choice(vowels)
+    return random.choice(weighted_vowels)
  
 def _consonant():
-    return random.choice(consonants)
+    return random.choice(weighted_consonants)
  
 def _cv():
     return _consonant() + _vowel()
