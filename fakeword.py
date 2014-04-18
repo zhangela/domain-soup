@@ -1,4 +1,5 @@
 import random
+import os, sys
  
 vowels = ["a", "e", "i", "o", "u"]
 consonants = ['b', 'c', 'd', 'f', 'g', 'h', 'j', 'k', 'l', 'm', 'n', 'p', 'q', 
@@ -38,4 +39,21 @@ def create_fake_word():
     return "".join(syllables)
  
 if __name__ == "__main__":
-    print create_fake_word()
+    grep = {
+        "com": "No match",
+        "org": "NOT FOUND"
+    }
+
+    if len(sys.argv) > 1:
+        tld = sys.argv[1]
+    else:
+        tld = "com"
+
+    x = 1
+
+    while x:
+        word = create_fake_word()
+        domain = word + "." + tld
+        x = os.system("whois " + domain + " | grep '" + grep[tld] + "' > /dev/null")
+
+    print domain
